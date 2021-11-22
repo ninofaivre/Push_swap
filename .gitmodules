@@ -1,6 +1,6 @@
 [submodule "Get-Next-Line"]
 	path = Get-Next-Line
-	url = ./Get-Next-Line
+	url = git@github.com:ninofaivre/Get-Next-Line.git
 [submodule "ft_printf"]
 	path = ft_printf
 	url = git@github.com:ninofaivre/ft_printf.git
