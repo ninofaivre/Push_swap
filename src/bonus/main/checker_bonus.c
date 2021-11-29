@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nino <nino@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 10:46:41 by nino              #+#    #+#             */
-/*   Updated: 2021/11/19 15:40:32 by nino             ###   ########.fr       */
+/*   Updated: 2021/11/29 13:16:57 by nfaivre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ static void	ft_parse_stdin(t_stacks *stacks)
 	char	*str;
 
 	str = get_next_line(0);
-	if (str && stacks->size_a == 0)
+	if (str && (stacks->size_a == 0
+			|| is_array_sorted(stacks->a, stacks->size_a)))
 	{
 		free(str);
 		get_next_line(-1);
