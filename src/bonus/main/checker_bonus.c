@@ -61,13 +61,18 @@ static void	ft_parse_stdin(t_stacks *stacks)
 	char	*str;
 
 	str = get_next_line(0);
+	if (str && stacks->size_a == 0)
+	{
+		free(str);
+		get_next_line(-1);
+		ft_error(stacks);
+	}
 	while (str)
 	{
-		if (stacks->size_a == 0)
-			ft_error(stacks);
 		if (do_stdin_op(stacks, str) == -1)
 		{
 			free(str);
+			get_next_line(-1);
 			ft_error(stacks);
 		}
 		free(str);
