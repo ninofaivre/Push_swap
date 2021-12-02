@@ -6,7 +6,7 @@
 #    By: nfaivre <nfaivre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/24 18:33:13 by nino              #+#    #+#              #
-#    Updated: 2021/12/02 11:33:43 by nfaivre          ###   ########.fr        #
+#    Updated: 2021/12/02 13:58:09 by nfaivre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,11 +43,11 @@ $(DIR_OBJ)/%.o : $(DIR_SRC)/*/%.c
 $(BONUS):
 	make -C ft_printf
 	@make -C Get-Next-Line DIR_OBJ=$(addprefix $(PWD)/, $(DIR_OBJ))
-	$(CC) $(CFLAGS) $(BONUS_OBJ) $(GNL_OBJ) -o $(BONUS) -Lft_printf -l:libftprintf.a
+	$(CC) $(CFLAGS) $(BONUS_OBJ) $(GNL_OBJ) -o $(BONUS) -Lft_printf -lftprintf
 
 $(NAME):
 	make -C ft_printf
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -Lft_printf -l:libftprintf.a
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -Lft_printf -lftprintf
 
 all: mkdir_DIR_OBJ $(OBJ) $(NAME)
 
